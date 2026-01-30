@@ -1,5 +1,4 @@
-#import <BrightnessManagerSpec/BrightnessManagerSpec.h>
+#import <React/RCTBridgeModule.h>
 
-@interface BrightnessManager : NSObject <NativeBrightnessManagerSpec>
-
+@interface BrightnessManager : NSObject <RCTBridgeModule>
 @end
