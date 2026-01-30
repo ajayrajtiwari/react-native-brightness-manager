@@ -1,6 +1,8 @@
 require "json"
 
-package = JSON.parse(File.read(File.join(__dir__, "package.json")))
+package = JSON.parse(
+  File.read(File.join(__dir__, "package.json"))
+)
 
 Pod::Spec.new do |s|
   s.name         = "BrightnessManager"
@@ -8,13 +10,17 @@ Pod::Spec.new do |s|
   s.summary      = package["description"]
   s.homepage     = package["homepage"]
   s.license      = package["license"]
-  s.authors      = package["author"]
+  s.author       = package["author"]
 
-  s.platforms    = { :ios => min_ios_version_supported }
-  s.source       = { :git => "https://github.com/ajayrajtiwari/react-native-brightness-manager.git", :tag => "#{s.version}" }
+  s.platforms    = { :ios => "12.0" }
 
-  s.source_files = "ios/**/*.{h,m,mm,swift,cpp}"
-  s.private_header_files = "ios/**/*.h"
+  s.source       = {
+    :git => "https://github.com/ajayrajtiwari/react-native-brightness-manager.git",
+    :tag => s.version.to_s
+  }
 
-  install_modules_dependencies(s)
+  s.source_files = "ios/**/*.{h,m,mm}"
+  s.requires_arc = true
+
+  s.dependency "React-Core"
 end
