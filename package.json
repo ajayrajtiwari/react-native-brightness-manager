@@ -1,6 +1,6 @@
 {
   "name": "react-native-brightness-manager",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Native brightness manager for React Native (no Expo)",
   "homepage": "https://github.com/ajayrajtiwari/react-native-brightness-manager",
   "main": "lib/module/index.js",
